@@ -11,7 +11,7 @@ class LoginPage(BasePage):
 
     def should_be_login_url(self):
         try:
-            assert LoginPageLocators.LOGIN_FORM in self.current_url(), "'login' is not present in URL"
+            assert LoginPageLocators.LOGIN in self.browser.current_url, "'login' is not present in URL"
         except NoSuchElementException:
             assert False
         assert True
