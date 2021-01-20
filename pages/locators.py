@@ -1,12 +1,11 @@
 from selenium.webdriver.common.by import By
-from .base_page import BasePage
 
 
-class MainPageLocators():
+class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 
-class LoginPageLocators(BasePage):
+class LoginPageLocators:
     LOGIN_FORM = (By.ID, "login_form")
     REGISTER_FORM = (By.ID, "register_form")
     LOGIN = "login"
