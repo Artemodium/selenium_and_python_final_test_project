@@ -29,3 +29,13 @@ class LoginPage(BasePage):
         except NoSuchElementException:
             assert False
         assert True
+
+    def register_new_user(self, email, password):
+        email_field = self.browser.find_element(*LoginPageLocators.REGISTRATION_EMAIL)
+        email_field.send_keys(email)
+        password_field = self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD)
+        password_field.send_keys(password)
+        confirm_password_field = self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD_CONFIRM)
+        confirm_password_field.send_keys(password)
+        register_button = self.browser.find_element(*LoginPageLocators.REGISTRATION_BUTTON)
+        register_button.click()
