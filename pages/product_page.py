@@ -4,13 +4,14 @@ from selenium.common.exceptions import NoSuchElementException
 
 
 class ProductPage(BasePage):
-    def should_be_product_page(self):
-        self.should_be_message_product_in_basket_valid()
-        self.should_be_product_price_valid()
 
     def add_to_basket(self):
         link = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_LINK)
         link.click()
+
+    def should_be_verified_after_add_to_basket(self):
+        self.should_be_message_product_in_basket_valid()
+        self.should_be_product_price_valid()
 
     def should_be_message_product_in_basket_valid(self):
         try:
