@@ -1,7 +1,0 @@
-/requirements.txt
-/pyvenv.cfg
-.idea/
-Lib/
-Scripts/
-__pycache__/
-/.gitignore
